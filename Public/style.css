@@ -1,0 +1,755 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f4f6f9;
+
+    color: #222;
+
+    transition:
+        background 0.3s,
+        color 0.3s;
+}
+
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    background: white;
+
+    padding: 25px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 1px solid #ddd;
+
+    transition: 0.3s;
+}
+
+.header h1 {
+    font-size: 30px;
+}
+
+.header p {
+    color: #777;
+
+    margin-top: 5px;
+}
+
+.dark-mode-button {
+    border: none;
+
+    background: #222;
+
+    color: white;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.dark-mode-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: 40px auto;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+section h2 {
+    margin-bottom: 8px;
+}
+
+.section-description {
+    color: #777;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.search-section {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.search-box {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 18px;
+}
+
+.search-box input {
+    flex: 1;
+
+    padding: 14px 16px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #777;
+}
+
+.search-box button {
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #222;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.search-box button:hover {
+    opacity: 0.85;
+}
+
+#searchMessage {
+    margin-top: 10px;
+
+    color: #d33;
+}
+
+
+/* =========================
+   FEATURED
+========================= */
+
+.featured-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 18px;
+
+    margin-top: 20px;
+}
+
+.featured-card {
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    border: 2px solid transparent;
+
+    transition:
+        transform 0.2s,
+        border 0.2s,
+        box-shadow 0.2s;
+}
+
+.featured-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #777;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.featured-card img {
+    width: 130px;
+
+    height: 130px;
+
+    object-fit: contain;
+}
+
+.featured-card h3 {
+    margin-top: 8px;
+
+    text-transform: capitalize;
+}
+
+.featured-card p {
+    color: #888;
+
+    margin-top: 5px;
+}
+
+
+/* =========================
+   POKEMON DETAIL
+========================= */
+
+.pokemon-detail {
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.07);
+
+    min-height: 350px;
+}
+
+.detail-content {
+    display: grid;
+
+    grid-template-columns: 300px 1fr;
+
+    gap: 40px;
+
+    align-items: center;
+}
+
+.detail-image {
+    text-align: center;
+}
+
+.detail-image img {
+    width: 260px;
+
+    height: 260px;
+
+    object-fit: contain;
+}
+
+.detail-info h2 {
+    font-size: 38px;
+
+    text-transform: capitalize;
+
+    margin-bottom: 5px;
+}
+
+.pokemon-number {
+    color: #888;
+
+    margin-bottom: 10px;
+}
+
+.type-container {
+    display: flex;
+
+    gap: 8px;
+
+    margin: 15px 0;
+}
+
+.type {
+    padding: 7px 13px;
+
+    background: #eee;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    text-transform: capitalize;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.stat {
+    background: #f4f4f4;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.stat span:last-child {
+    font-weight: bold;
+}
+
+
+/* =========================
+   EVOLUTION
+========================= */
+
+.evolution-container {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.evolution-card {
+    width: 180px;
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    border: 2px solid transparent;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.06);
+
+    transition: 0.2s;
+}
+
+.evolution-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #777;
+}
+
+.evolution-card img {
+    width: 120px;
+
+    height: 120px;
+
+    object-fit: contain;
+}
+
+.evolution-card h3 {
+    text-transform: capitalize;
+
+    margin-top: 5px;
+}
+
+.evolution-card p {
+    color: #888;
+
+    margin-top: 4px;
+}
+
+.evolution-arrow {
+    font-size: 30px;
+
+    color: #888;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   FORMS
+========================= */
+
+.forms-section {
+    margin-top: 35px;
+}
+
+.forms-section h3 {
+    margin-bottom: 15px;
+}
+
+.forms-grid {
+    display: flex;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+}
+
+.form-card {
+    width: 180px;
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    border: 2px solid transparent;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.06);
+
+    transition: 0.2s;
+}
+
+.form-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #777;
+}
+
+.form-card img {
+    width: 120px;
+
+    height: 120px;
+
+    object-fit: contain;
+}
+
+.form-card h3 {
+    margin-top: 8px;
+
+    text-transform: capitalize;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================
+   RECENT
+========================= */
+
+.recent-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.recent-header p {
+    color: #888;
+
+    margin-top: 5px;
+}
+
+.sort-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.sort-box select {
+    padding: 10px 14px;
+
+    border-radius: 8px;
+
+    border: 1px solid #ccc;
+
+    background: white;
+}
+
+.recent-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 15px;
+}
+
+.recent-card {
+    background: white;
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.recent-card:hover {
+    transform: translateY(-4px);
+}
+
+.recent-card img {
+    width: 120px;
+
+    height: 120px;
+
+    object-fit: contain;
+}
+
+.recent-card h3 {
+    text-transform: capitalize;
+}
+
+.recent-card p {
+    color: #888;
+
+    margin-top: 4px;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.loading,
+.empty-message {
+    text-align: center;
+
+    color: #888;
+
+    padding: 40px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: white;
+
+    padding: 25px;
+
+    text-align: center;
+
+    color: #888;
+
+    border-top: 1px solid #ddd;
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark {
+    background: #121212;
+
+    color: #eee;
+}
+
+body.dark .header,
+body.dark .search-section,
+body.dark .pokemon-detail,
+body.dark .featured-card,
+body.dark .evolution-card,
+body.dark .form-card,
+body.dark .recent-card,
+body.dark footer {
+    background: #1e1e1e;
+
+    color: #eee;
+
+    border-color: #333;
+}
+
+body.dark .header {
+    border-bottom-color: #333;
+}
+
+body.dark .header p,
+body.dark .section-description,
+body.dark .recent-header p,
+body.dark .featured-card p,
+body.dark .recent-card p,
+body.dark .pokemon-number {
+    color: #aaa;
+}
+
+body.dark .search-box input,
+body.dark .sort-box select {
+    background: #292929;
+
+    color: white;
+
+    border-color: #444;
+}
+
+body.dark .search-box button {
+    background: white;
+
+    color: #111;
+}
+
+body.dark .stat {
+    background: #292929;
+}
+
+body.dark .type {
+    background: #333;
+
+    color: white;
+}
+
+body.dark .dark-mode-button {
+    background: white;
+
+    color: #111;
+}
+
+body.dark footer {
+    border-top-color: #333;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .featured-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .recent-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .header {
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+
+    .detail-content {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .type-container {
+        justify-content: center;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-grid,
+    .recent-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .recent-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .featured-grid,
+    .recent-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .evolution-arrow {
+        transform: rotate(90deg);
+    }
+
+}

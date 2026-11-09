@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Pokémon Explorer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="header">
+
+        <div>
+            <h1>Pokémon Explorer</h1>
+            <p>Search, explore and discover Pokémon</p>
+        </div>
+
+        <button
+            id="darkModeButton"
+            class="dark-mode-button"
+            type="button"
+            aria-label="เปลี่ยนเป็นโหมดกลางคืน"
+            aria-pressed="false"
+        >
+            <span class="theme-icon" aria-hidden="true">☀️</span>
+            <span class="theme-label">โหมดกลางวัน</span>
+        </button>
+
+    </header>
+
+
+    <main class="container">
+
+        <!-- =========================
+             SEARCH
+        ========================== -->
+
+        <section class="search-section">
+
+            <h2>Search Pokémon</h2>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Enter Pokémon name..."
+                >
+
+                <button id="searchButton">
+                    Search
+                </button>
+
+            </div>
+
+            <p id="searchMessage"></p>
+
+        </section>
+
+
+        <!-- =========================
+             FEATURED
+        ========================== -->
+
+        <section class="featured-section">
+
+            <div class="section-title">
+
+                <div>
+                    <h2>Featured Pokémon</h2>
+
+                    <p>
+                        Choose a Pokémon to view its details
+                    </p>
+                </div>
+
+            </div>
+
+            <div
+                id="featuredContainer"
+                class="featured-grid"
+            ></div>
+
+        </section>
+
+
+        <!-- =========================
+             DETAILS
+        ========================== -->
+
+        <section class="detail-section">
+
+            <h2>Pokémon Details</h2>
+
+            <div
+                id="pokemonDetail"
+                class="pokemon-detail"
+            >
+                <p class="loading">
+                    Loading Pokémon...
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EVOLUTION + FORMS
+        ========================== -->
+
+        <section class="family-section">
+
+            <h2>Evolution & Forms</h2>
+
+            <p class="section-description">
+                Explore the Pokémon's evolution line and available forms.
+            </p>
+
+
+            <div
+                id="evolutionContainer"
+                class="evolution-container"
+            >
+                <p class="empty-message">
+                    Select a Pokémon to view its evolution.
+                </p>
+            </div>
+
+
+            <div
+                id="formsSection"
+                class="forms-section hidden"
+            >
+
+                <h3>Forms & Variations</h3>
+
+                <div
+                    id="formsContainer"
+                    class="forms-grid"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RECENTLY VIEWED
+        ========================== -->
+
+        <section class="recent-section">
+
+            <div class="recent-header">
+
+                <div>
+                    <h2>Recently Viewed</h2>
+
+                    <p>
+                        Stack: newest Pokémon appears first
+                    </p>
+                </div>
+
+
+                <div class="sort-box">
+
+                    <label for="sortSelect">
+                        Sort by
+                    </label>
+
+                    <select id="sortSelect">
+
+                        <option value="id">
+                            Pokémon ID
+                        </option>
+
+                        <option value="name">
+                            Name
+                        </option>
+
+                        <option value="hp">
+                            HP
+                        </option>
+
+                        <option value="attack">
+                            Attack
+                        </option>
+
+                        <option value="defense">
+                            Defense
+                        </option>
+
+                        <option value="speed">
+                            Speed
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="recentContainer"
+                class="recent-grid"
+            ></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            Pokémon Explorer • Powered by PokéAPI
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
